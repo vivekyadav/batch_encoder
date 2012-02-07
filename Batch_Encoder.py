@@ -9,6 +9,7 @@ NOTE : HandbrakeCLI is required to be in the same folder as this script.
 
 import os
 import sys
+import re
 
 def main():
     if len(sys.argv) < 2:
@@ -17,13 +18,13 @@ def main():
     files = os.listdir(sys.argv[1])
     dir = sys.argv[1] + "\\"
     setting = " -t 1 -c 1 -f mkv --strict-anamorphic  -e x264 -S 190 -2  -a 1 -E faac -6 dpl2 -R Auto -B 48 -D 0.0 -x ref=2:bframes=2:subq=6:mixed-refs=0:weightb=0:8x8dct=0:trellis=0 --verbose=1"
-    print files
+    container = re.search(r'-f ([a-z]*)',setting).group(1)
     for i in range(0,len(files)):
         print "\nEncoding "+files[i]
         inname = "\""+dir+files[i]+"\""
-        outname = ".".join(files[i].split(".")[:-1]) + "-1." + files[i].split(".")[-1]
+        outname = ".".join(files[i].split(".")[:-1]) + "-1." + container
         outname = "\""+dir+outname+"\""
         print "\nOutput file : "+outname
-        os.system("HandBrakeCLI.exe -i "+inname+" -o "+ outname + setting)
+        #os.system("HandBrakeCLI.exe -i "+inname+" -o "+ outname + setting)
 
 main()
