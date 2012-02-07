@@ -1,5 +1,0 @@
-A script to Batch-encode Video files using HandbrakeCLI.
-Takes a folder path as it's argument and encodes all the video files in it.
-NOTE : HandbrakeCLI is required to be in the same folder as this script.
-       http://handbrake.fr
-       Change the "setting" variable to modify encoding details.
