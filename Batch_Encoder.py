@@ -16,7 +16,7 @@ def main():
         exit(0)
     files = os.listdir(sys.argv[1])
     dir = sys.argv[1] + "\\"
-    setting = "-t 1 -c 1 -f mkv --strict-anamorphic  -e x264 -S 190 -2  -a 1 -E faac -6 dpl2 -R Auto -B 48 -D 0.0 -x ref=2:bframes=2:subq=6:mixed-refs=0:weightb=0:8x8dct=0:trellis=0 --verbose=1"
+    setting = " -t 1 -c 1 -f mkv --strict-anamorphic  -e x264 -S 190 -2  -a 1 -E faac -6 dpl2 -R Auto -B 48 -D 0.0 -x ref=2:bframes=2:subq=6:mixed-refs=0:weightb=0:8x8dct=0:trellis=0 --verbose=1"
     print files
     for i in range(0,len(files)):
         print "\nEncoding "+files[i]
