@@ -25,6 +25,6 @@ def main():
         outname = ".".join(files[i].split(".")[:-1]) + "-1." + container
         outname = "\""+dir+outname+"\""
         print "\nOutput file : "+outname
-        #os.system("HandBrakeCLI.exe -i "+inname+" -o "+ outname + setting)
+        os.system("HandBrakeCLI.exe -i "+inname+" -o "+ outname + setting)
 
 main()
